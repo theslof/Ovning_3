@@ -2,10 +2,6 @@ package com.theslof;
 
 public class Ellipse extends Shape implements Comparable {
 
-    public Ellipse() {
-        this(0, 0);
-    }
-
     public Ellipse(double l, double w) {
         super(l, w);
     }

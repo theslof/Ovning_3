@@ -2,10 +2,6 @@ package com.theslof;
 
 public class ResizeableRectangle extends Rectangle implements IResizable, Comparable {
 
-    public ResizeableRectangle() {
-        this(1, 1);
-    }
-
     public ResizeableRectangle(double l, double w) {
         super(l, w);
     }

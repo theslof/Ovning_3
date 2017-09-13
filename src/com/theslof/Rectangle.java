@@ -2,10 +2,6 @@ package com.theslof;
 
 public class Rectangle extends Shape implements Comparable{
 
-    public Rectangle() {
-        this(0, 0);
-    }
-
     public Rectangle(double l, double w) {
         super(l, w);
     }

@@ -52,9 +52,9 @@ public class Program {
 
     public static Shape createShape(ShapeType shape) {
         if (shape == ShapeType.ELLIPSE)
-            return new Ellipse();
+            return new Ellipse(0,0);
         if (shape == ShapeType.RECTANGLE)
-            return new Rectangle();
+            return new Rectangle(0,0);
         return null;
     }
 
