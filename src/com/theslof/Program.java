@@ -22,6 +22,8 @@ public class Program {
             //så hoppar vi över resten.
             if ((s = createShape(shape)) != null) {
                 setDimensions(s); //Läs in längd/bredd och ändra objektets värden
+                if(s instanceof IResizable)
+                    resizeShape((IResizable)s);
                 shapes.add(s);
             }
         } while (shape != null);
@@ -50,9 +52,9 @@ public class Program {
             return ShapeType.ELLIPSE; //Användaren valde Ellips
         if (choice == 2)
             return ShapeType.RECTANGLE; //Användaren valde Rektangel
-        if (choice == 1)
+        if (choice == 3)
             return ShapeType.RESELLIPSE; //Användaren valde Ellips
-        if (choice == 2)
+        if (choice == 4)
             return ShapeType.RESRECTANGLE; //Användaren valde Rektangel
         return null; //Användaren valde Avsluta, så vi returnerar null och skapar inget objekt
     }
@@ -66,12 +68,10 @@ public class Program {
         shape.setWidth(width);
     }
 
-    public static void resizeShape(Shape shape){
-        if(!(shape instanceof IResizable))
-            return;
-        System.out.print("Ändra storlek med antal procent: ");
+    public static void resizeShape(IResizable shape){
+        System.out.print("Ändra storlek till procent: ");
         double scale = inputDouble();
-        ((IResizable)shape).resize((int)scale);
+        shape.resize((int)scale);
     }
 
     public static Shape createShape(ShapeType shape) {
