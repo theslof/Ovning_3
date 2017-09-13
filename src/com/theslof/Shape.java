@@ -1,7 +1,6 @@
 package com.theslof;
 
 public abstract class Shape {
-    public enum ShapeType {Ellipse, Rectangle};
     private double _length;
     private double _width;
 
@@ -38,10 +37,11 @@ public abstract class Shape {
 
     @Override
     public String toString() {
-        return String.format("Längd: %.2f\n" +
-                "Bredd: %.2f\n" +
+        return String.format(
+                "Längd  : %.2f\n" +
+                "Bredd  : %.2f\n" +
                 "Omkrets: %.2f\n" +
-                "Area: %.2f\n",
+                "Area   : %.2f\n",
                 getLength(), getWidth(), getPerimiter(), getArea());
     }
 }

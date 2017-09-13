@@ -4,9 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
-    public enum ShapeType {Ellipse, Rectangle}
-
-    ;
 
     public static void main(String[] args) {
         ShapeType shape;
@@ -34,9 +31,9 @@ public class Program {
         } while (choice < 0 || choice > 2);
 
         if (choice == 1)
-            return ShapeType.Ellipse;
+            return ShapeType.ELLIPSE;
         if (choice == 2)
-            return ShapeType.Rectangle;
+            return ShapeType.RECTANGLE;
         return null;
     }
 
@@ -50,9 +47,9 @@ public class Program {
     }
 
     public static Shape createShape(ShapeType shape) {
-        if (shape == ShapeType.Ellipse)
+        if (shape == ShapeType.ELLIPSE)
             return new Ellipse();
-        if (shape == ShapeType.Rectangle)
+        if (shape == ShapeType.RECTANGLE)
             return new Rectangle();
         return null;
     }
@@ -66,17 +63,17 @@ public class Program {
         Scanner input = new Scanner(System.in);
 
         double i = 0;
-        //waiting håler reda på om vi väntar eller har en int redo
+        //waiting håler reda på om vi väntar eller har en double redo
         boolean waiting = true;
 
         do {
             //Try/catch för att undvika krasch
             try {
-                //Om Try lyckas så har vi en int, waiting sätts till false;
+                //Om Try lyckas så har vi en double, waiting sätts till false;
                 i = input.nextDouble();
                 waiting = false;
             } catch (InputMismatchException e) {
-                //Vi lyckades inte läsa en int, hoppa till nästa ord i input
+                //Vi lyckades inte läsa en double, hoppa till nästa ord i input
                 input.next();
             }
         } while (waiting);
