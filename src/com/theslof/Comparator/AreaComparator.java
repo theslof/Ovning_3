@@ -1,4 +1,6 @@
-package com.theslof;
+package com.theslof.Comparator;
+
+import com.theslof.Shape;
 
 import java.util.Comparator;
 
