@@ -6,14 +6,18 @@ import java.util.Scanner;
 public class Program {
 
     public static void main(String[] args) {
-        ShapeType shape;
+        ShapeType shape; //Skapa en ShapeType-variabel som håller vårt menyval
         do {
-            shape = doMenu();
+            shape = doMenu(); //Visa menyn och spara användarens val
 
-            Shape s;
+            Shape s; //Skapa en Shape-variabel som håller objektet
+
+            //Kör createShape(shape) och spara Shape i s.
+            //Om s är null, dvs. användaren valde ingen ShapeType,
+            //så hoppar vi över resten.
             if ((s = createShape(shape)) != null) {
-                setDimensions(s);
-                viewShapeInfo(s);
+                setDimensions(s); //Läs in längd/bredd och ändra objektets värden
+                viewShapeInfo(s); //Skriv ut objektet som en sträng
             }
         } while (shape != null);
     }
@@ -24,17 +28,17 @@ public class Program {
         System.out.println("(0) Avsluta");
         System.out.print("Välj ett alternativ: ");
 
-        int choice = -1;
+        int choice;
 
         do {
-            choice = (int) inputDouble();
-        } while (choice < 0 || choice > 2);
+            choice = (int) inputDouble(); //Läs in en double och gör typecast till int
+        } while (choice < 0 || choice > 2); //Loopa om valet är ogiltigt
 
         if (choice == 1)
-            return ShapeType.ELLIPSE;
+            return ShapeType.ELLIPSE; //Användaren valde Ellips
         if (choice == 2)
-            return ShapeType.RECTANGLE;
-        return null;
+            return ShapeType.RECTANGLE; //Användaren valde Rektangel
+        return null; //Användaren valde Avsluta, så vi returnerar null och skapar inget objekt
     }
 
     private static void setDimensions(Shape shape) {
