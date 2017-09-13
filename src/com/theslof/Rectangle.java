@@ -1,6 +1,6 @@
 package com.theslof;
 
-public class Rectangle extends Shape implements Comparable{
+public class Rectangle extends Shape{
 
     public Rectangle(double l, double w) {
         super(l, w);
@@ -14,15 +14,5 @@ public class Rectangle extends Shape implements Comparable{
     @Override
     public double getPerimiter() {
         return getLength() * 2 + getWidth() * 2;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        Shape s = (Shape) o;
-        if (this.getArea() < s.getArea())
-            return -1;
-        if (this.getArea() > s.getArea())
-            return 1;
-        return 0;
     }
 }

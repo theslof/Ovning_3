@@ -1,6 +1,6 @@
 package com.theslof;
 
-public class Ellipse extends Shape implements Comparable {
+public class Ellipse extends Shape {
 
     public Ellipse(double l, double w) {
         super(l, w);
@@ -17,15 +17,5 @@ public class Ellipse extends Shape implements Comparable {
         double b = getWidth() * 0.5;
         //Ramanujan's approximation, close enough:
         return Math.PI * Math.abs(3 * (a + b) - Math.sqrt((3 * a + b) * (a + 3 * b)));
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        Shape s = (Shape) o;
-        if (this.getArea() < s.getArea())
-            return -1;
-        if (this.getArea() > s.getArea())
-            return 1;
-        return 0;
     }
 }

@@ -1,3 +1,3 @@
 package com.theslof;
 
-public enum ShapeType {ELLIPSE, RECTANGLE}
+public enum ShapeType {ELLIPSE, RECTANGLE, RESELLIPSE, RESRECTANGLE}

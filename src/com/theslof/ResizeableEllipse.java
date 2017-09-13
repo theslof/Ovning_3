@@ -1,6 +1,6 @@
 package com.theslof;
 
-public class ResizeableEllipse extends Ellipse implements IResizable, Comparable{
+public class ResizeableEllipse extends Ellipse implements IResizable{
     public ResizeableEllipse(double l, double w) {
         super(l, w);
     }
