@@ -4,7 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
-    public enum ShapeType {Ellipse, Rectangle};
+    public enum ShapeType {Ellipse, Rectangle}
+
+    ;
 
     public static void main(String[] args) {
         ShapeType shape;
@@ -12,7 +14,7 @@ public class Program {
             shape = doMenu();
 
             Shape s;
-            if((s = createShape(shape)) != null) {
+            if ((s = createShape(shape)) != null) {
                 setDimensions(s);
                 viewShapeInfo(s);
             }
@@ -27,13 +29,13 @@ public class Program {
 
         int choice = -1;
 
-        do{
+        do {
             choice = (int) inputDouble();
         } while (choice < 0 || choice > 2);
 
-        if(choice == 1)
+        if (choice == 1)
             return ShapeType.Ellipse;
-        if(choice == 2)
+        if (choice == 2)
             return ShapeType.Rectangle;
         return null;
     }
@@ -47,15 +49,15 @@ public class Program {
         shape.setWidth(width);
     }
 
-    public static Shape createShape(ShapeType shape){
-        if(shape == ShapeType.Ellipse)
+    public static Shape createShape(ShapeType shape) {
+        if (shape == ShapeType.Ellipse)
             return new Ellipse();
-        if(shape == ShapeType.Rectangle)
+        if (shape == ShapeType.Rectangle)
             return new Rectangle();
         return null;
     }
 
-    public static void viewShapeInfo(Shape shape){
+    public static void viewShapeInfo(Shape shape) {
         System.out.println(shape);
     }
 

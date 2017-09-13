@@ -23,9 +23,9 @@ public class Rectangle extends Shape implements Comparable{
     @Override
     public int compareTo(Object o) {
         Shape s = (Shape) o;
-        if(this.getArea() < s.getArea())
+        if (this.getArea() < s.getArea())
             return -1;
-        if(this.getArea() > s.getArea())
+        if (this.getArea() > s.getArea())
             return 1;
         return 0;
     }
